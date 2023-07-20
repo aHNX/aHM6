@@ -11,7 +11,7 @@ qSA(".tsBtn").forEach(e=>{var s=gAt(e,"target"),d=(e,s)=>{window.open(e,s)};hAt(
 /* Lazy YouTube */
 qSA(".YT-Player").forEach(e=>{var a=gAt(e,"videoID"),i=cE("div");sAt(i,"videoID",a);var r=cE("img");r.alt="",r.src="https://i.ytimg.com/vi/"+a+"/hqdefault.jpg",i.appendChild(r);var l=cE("div");sAt(l,"class","Play"),i.appendChild(l),i.onclick=function(){var e=cE("iframe");e.src="https://www.youtube.com/embed/"+a+"?autoplay=1&rel=0",e.frameborder="0",e.allowfullscreen=!0,e.allow="accelerometer;autoplay;encrypted-media;gyroscope;picture-in-picture",this.parentNode.replaceChild(e,this)},e.appendChild(i)});
 /* Download */
-function tsDL(e,t,i){if(i="string"==typeof i?i:"text/plain",t="string"==typeof t?t:"File_"+(new Date).getTime()+".txt",e){if(i=new Blob([e],{type:i}),navigator.msSaveBlob)return navigator.msSaveBlob(i,t);{let n=window.URL.createObjectURL(i),o=cE("a");aC(o,"hidden"),o.href=n,o.download=t,document.body.appendChild(o),o.click(),o.remove(),window.URL.revokeObjectURL(n)}}}
+function tsDL(e,t,d){let i=new Blob([e],{type:d||"text/plain"}),l=URL.createObjectURL(i),n=cE("a");n.href=l,n.download=t||`File_${new Date().getTime()}.txt`,hide(n),document.body.appendChild(n),n.click(),document.body.removeChild(n),URL.revokeObjectURL(l)}
 /* Script Demo */
 function HD(a,b){shake(40);var c="<meta content='width=device-width,initial-scale=1,user-scalable=1,minimum-scale=1,maximum-scale=5' name='viewport'/><style>body{padding:15px;line-height:1.6}html{padding-right:25px}</style><b>Demo :</b> "+b+"\n"+a;c=new Blob([c],{type:"text/html"}),window.navigator.msSaveOrOpenBlob?window.navigator.msSaveOrOpenBlob(blobObject,fileName):(c=window.URL.createObjectURL(c),window.open(c,"_blank"),window.URL.revokeObjectURL(c))}
 /* Open Share Navigation */
