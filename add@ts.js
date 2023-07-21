@@ -1,5 +1,5 @@
 /* Show/Hide [ Header,Footer ] */
-let prevScrollpos=window.pageYOffset;window.onscroll=()=>{let e=window.pageYOffset,o=qS("header").style,p=qS(".Mobile_Menu_Widget").style;prevScrollpos>e?(o.top="15px",p.bottom="15px"):(o.top="-60px",p.bottom="-60px"),prevScrollpos=e};
+prevScrollpos=window.pageYOffset,window.onscroll=()=>{let e=window.pageYOffset,o=qS("header").style,p=qS(".Mobile_Menu_Widget").style;prevScrollpos>e?(o.top="15px",p.bottom="15px"):(o.top="-60px",p.bottom="-60px"),prevScrollpos=e};
 
 /* Image */
 qSA(".onPost .postEntry img").forEach(a=>{aC(a,"lazyImg"),sAt(a,"s",a.src.replace(/\/s[0-9]+(\-c)?/,"/s1280-rw-e30")),sAt(a,"src","data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="),sAt(a,"alt",TS.Ts.pageTitle),sAt(a,"onclick","return false")});function wrap(t,r,A){qSA(r).forEach(a=>{a.outerHTML=t+a.outerHTML+A})}wrap('<div class="zmImg">',".postEntry img","</div>");qSA(".zmImg").forEach(a=>{a.onclick=function(){tC(this,"s"),event.preventDefault()}});
